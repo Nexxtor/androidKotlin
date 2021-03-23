@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_gap">16dp</dimen>
+    <dimen name="minimum_gap">8dp</dimen>
+    <dimen name="title_font_size">16sp</dimen>
+    <dimen name="counter_font_size">70sp</dimen>
+</resources>

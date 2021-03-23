@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/default_gap">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_equipo_a"
+        android:textAllCaps="true"
+        android:textSize="@dimen/title_font_size"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_view_counter_team_a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/minimum_gap"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="@dimen/counter_font_size" />
+
+    <Button
+        android:id="@+id/action_plus_team_a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="increaseScore"
+        android:text="@string/action_plus_one" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="@dimen/default_gap"
+        android:layout_marginBottom="@dimen/default_gap"
+        android:background="@color/black" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_gap"
+        android:text="@string/title_equipo_b"
+        android:textAllCaps="true"
+        android:textSize="@dimen/title_font_size"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_view_counter_team_b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/minimum_gap"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="@dimen/counter_font_size" />
+
+    <Button
+        android:id="@+id/action_plus_team_b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="increaseScore"
+        android:text="@string/action_plus_one" />
+
+</LinearLayout>
