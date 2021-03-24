@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="caption_font_size">16sp</dimen>
+    <dimen name="counter_font_size">70sp</dimen>
+    <dimen name="minimun_gap">8dp</dimen>
+    <dimen name="default_gap">16dp</dimen>
+</resources>
