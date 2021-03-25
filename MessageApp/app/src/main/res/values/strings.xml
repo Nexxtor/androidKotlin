@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MessageApp</string>
+    <string name="hint_message">Ingrese un mensaje</string>
+    <string name="action_watch">Ver</string>
+    <string name="action_send">Enviar</string>
+    <string name="empty_message">No se recibio mensaje</string>
+</resources>

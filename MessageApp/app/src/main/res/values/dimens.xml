@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_gap">16dp</dimen>
+    <dimen name="minimun_gap">8dp</dimen>
+    <dimen name="message_font_size">16sp</dimen>
+</resources>
