@@ -1,6 +1,7 @@
 package com.naldana.gamescore
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
@@ -15,11 +16,60 @@ class MainActivity : AppCompatActivity() {
     private lateinit var addScoreTeamA: Button
     private lateinit var addScoreTeamB: Button
 
+    companion object {
+        const val TEAM_A = "TEAM_A"
+        const val TEAM_B = "TEAM_B"
+        val TAG  = MainActivity::class.simpleName
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity_layout)
         bind()
-        //addEvenListeners()
+        savedInstanceState?.let {
+            scoreTeamA = it.getInt(TEAM_A, 0)
+            scoreTeamB = it.getInt(TEAM_B, 0)
+        }
+        handlerTeamA(0)
+        handlerTeamB(0)
+        Log.d(TAG,"onCreate")
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.d(TAG,"onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.d(TAG,"onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.d(TAG,"onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG,"onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.d(TAG,"onDestroy")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d(TAG,"onRestart")
+    }
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt(TEAM_A, scoreTeamA)
+        outState.putInt(TEAM_B, scoreTeamB)
+        Log.d(TAG,"onSaveInstanceState")
+
     }
 
     private fun bind() {
@@ -35,8 +85,8 @@ class MainActivity : AppCompatActivity() {
      */
     fun increaseScore(view: View) {
         when (view.id) {
-            R.id.action_plus_team_a -> handleAddOneTeamA(1)
-            R.id.action_plus_team_b -> handleAddOneTeamB(1)
+            R.id.action_plus_team_a -> handlerTeamA(1)
+            R.id.action_plus_team_b -> handlerTeamB(1)
         }
     }
 
@@ -45,20 +95,20 @@ class MainActivity : AppCompatActivity() {
      */
     private fun addEvenListeners() {
         addScoreTeamA.setOnClickListener {
-            handleAddOneTeamA(1)
+            handlerTeamA(1)
         }
         addScoreTeamB.setOnClickListener {
-            handleAddOneTeamB(1)
+            handlerTeamB(1)
         }
     }
 
-    private fun handleAddOneTeamA(points: Int) {
-        scoreTeamA+=points
+    private fun handlerTeamA(points: Int) {
+        scoreTeamA += points
         scoreTeamATextView.text = scoreTeamA.toString()
     }
 
-    private fun handleAddOneTeamB(points: Int) {
-        scoreTeamB+=points
+    private fun handlerTeamB(points: Int) {
+        scoreTeamB += points
         scoreTeamBTextView.text = scoreTeamB.toString()
     }
 }
