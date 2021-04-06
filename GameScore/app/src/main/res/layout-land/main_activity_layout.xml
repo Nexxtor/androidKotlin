@@ -4,26 +4,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:padding="@dimen/default_gap">
 
     <FrameLayout
         android:id="@+id/team_a_fragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
         tools:layout="@layout/score_fragment" />
 
     <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
         android:layout_marginTop="@dimen/default_gap"
         android:layout_marginBottom="@dimen/default_gap"
         android:background="@color/black" />
 
     <FrameLayout
         android:id="@+id/team_b_fragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
         tools:layout="@layout/score_fragment" />
 
 </LinearLayout>
