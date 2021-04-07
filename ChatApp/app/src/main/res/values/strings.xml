@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ChatApp</string>
+    <string name="hint_message">Escribe un mensaje</string>
+    <string name="action_see">ver</string>
+    <string name="action_send">enviar</string>
+    <string name="empty_message">No se recibio mensage</string>
+</resources>
