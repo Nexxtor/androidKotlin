@@ -3,4 +3,6 @@
     <string name="text_entrada">In</string>
     <string name="action_add_one">+1</string>
     <string name="caption_salida">Out</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
