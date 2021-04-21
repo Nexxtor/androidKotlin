@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LoginApp</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_user">User</string>
+    <string name="action_iniciar">Iniciar</string>
+    <string name="helper_forgot_password">He olvidado mi contraseña!</string>
+</resources>
