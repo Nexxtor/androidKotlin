@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">LiveDataExample</string>
+    <string name="hint_ingrese_mensage">Ingrese un mensaje</string>
+</resources>
