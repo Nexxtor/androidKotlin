@@ -5,6 +5,6 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface PokeService {
-    @GET("/pokemon/{key}/")
+    @GET("pokemon/{key}")
     suspend fun search(@Path("key") key: String): Pokemon
 }
