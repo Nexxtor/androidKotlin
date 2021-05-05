@@ -4,12 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.naldana.pokedex.R
+import com.naldana.pokedex.databinding.FragmentPokedexBinding
 import com.naldana.pokedex.repository.PokemonRepository
 
 /**
@@ -18,6 +16,9 @@ import com.naldana.pokedex.repository.PokemonRepository
  * create an instance of this fragment.
  */
 class PokedexFragment : Fragment() {
+
+    private var _binding: FragmentPokedexBinding? = null
+    private val binding get() = _binding!!
 
     // Va cambiar de lugar
     private val pokemonFactory: PokemonViewModelFactory by lazy {
@@ -34,21 +35,32 @@ class PokedexFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pokedex, container, false)
+        _binding = FragmentPokedexBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val searchEditText = view.findViewById<EditText>(R.id.pokemon_search)
-        val actionSearch = view.findViewById<Button>(R.id.action_find)
-        val displayPokemon = view.findViewById<TextView>(R.id.display_result)
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = viewLifecycleOwner
+        // binding.actionFind.setOnClickListener {
+        //    viewModel.search()
+        //}
+        viewModel.error.observe(viewLifecycleOwner) { error ->
+            val pokemonSearch = binding.pokemonSearch
+            if (error == null)
+                pokemonSearch.error = null
+            else
+                pokemonSearch.error = getString(error)
+        }
 
-        actionSearch.setOnClickListener {
-            val key = searchEditText.text.toString()
-            viewModel.search(key).observe(viewLifecycleOwner) {
-                displayPokemon.text = "${it.name} , ${it.id}"
-            }
+        viewModel.pokemon.observe(viewLifecycleOwner) { pokemon ->
+            if (pokemon.id == 0 || pokemon.name.isEmpty())
+                binding.displayResult.text = getString(R.string.hint_pokemon_search)
+            else
+                binding.displayResult.text =
+                    getString(R.string.pokemon_data, pokemon.id, pokemon.name)
         }
     }
 
