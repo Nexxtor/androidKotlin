@@ -4,12 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.naldana.pokedex.R
+import com.naldana.pokedex.databinding.FragmentPokedexBinding
 import com.naldana.pokedex.repository.PokemonRepository
 
 /**
@@ -28,28 +26,42 @@ class PokedexFragment : Fragment() {
         pokedexFactory
     }
 
+    private var _binding: FragmentPokedexBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_pokedex, container, false)
+        _binding = FragmentPokedexBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val keyEditText = view.findViewById<EditText>(R.id.search_text)
-        val searchButton = view.findViewById<Button>(R.id.action_search)
-        val displayPokemon = view.findViewById<TextView>(R.id.display_pokemon)
 
-        searchButton.setOnClickListener {
-            val key = keyEditText.text.toString()
-            val result = pokedexViewModel.search(key)
-            result.observe(viewLifecycleOwner) { pokemon ->
-                displayPokemon.text = "${pokemon.id} - ${pokemon.name}  "
+        binding.viewModel = pokedexViewModel
+        binding.lifecycleOwner = viewLifecycleOwner
+
+        pokedexViewModel.pokemon.observe(viewLifecycleOwner) { pokemon ->
+            val display = binding.displayPokemon
+            if (pokemon.name.isNotEmpty()) {
+                display.text =
+                    getString(R.string.pokemon_info, pokemon.id, pokemon.name)
+            } else {
+                display.text = getString(R.string.hint_pokemon)
             }
         }
 
+        pokedexViewModel.error.observe(viewLifecycleOwner) { error ->
+            if (error == null) {
+                binding.searchTextLayout.error = null
+            } else {
+                binding.searchTextLayout.error = getString(error)
+            }
+
+        }
     }
 
     companion object {

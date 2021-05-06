@@ -1,32 +1,44 @@
 package com.naldana.pokedex.ui.pokedex
 
-import android.util.Log
+import android.view.View
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.liveData
+import androidx.lifecycle.viewModelScope
+import com.naldana.pokedex.R
 import com.naldana.pokedex.data.Pokemon
 import com.naldana.pokedex.repository.PokemonRepository
+import kotlinx.coroutines.launch
+import retrofit2.HttpException
 
 class PokedexViewModel(private val repository: PokemonRepository) : ViewModel() {
 
+    var key = MutableLiveData("")
+    var pokemon = MutableLiveData<Pokemon>()
+    private var _loading = MutableLiveData(View.GONE)
+    val loading: LiveData<Int> get() = _loading
+    private var _error = MutableLiveData<Int?>(null)
+    val error: LiveData<Int?> get() = _error
 
     /**
      * Busca un pokemon
-     * @param key [String] Nombre o Numero de Pokemon
-     * @return [String] JSON con la información de pokemon
      */
-/*    fun search(key: String): Pokemon? {
-        var pokemon: Pokemon? = null
+    fun search() {
+        _loading.value = View.VISIBLE
+        _error.value = null
         viewModelScope.launch {
-            pokemon = repository.search(key)
-        }
-        return pokemon
-    }
-*/
-    fun search(key: String) = liveData<Pokemon> {
-        try {
-            emit(repository.search(key))
-        } catch (e: Exception) {
-            Log.e("PokedexViewModel", "Error al consguier el pokemon", e)
+            try {
+                if (key.value.isNullOrEmpty()) {
+                    pokemon.value = Pokemon(0, "", 0, 0)
+                } else {
+                    pokemon.value = repository.search(key.value!!)
+                }
+            } catch (e: HttpException) {
+                _error.value = R.string.error_not_found
+            } finally {
+                _loading.value = View.GONE
+            }
+
         }
     }
 

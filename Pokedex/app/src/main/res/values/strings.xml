@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Pokedex</string>
+    <string name="hint_pokemon">Ingrese un numero o id de pokemon</string>
+    <string name="pokemon_info">%d - %s</string>
+    <string name="error_not_found">No se encontro un Pokemon con el id o nombre</string>
 </resources>
