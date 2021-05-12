@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.naldana.pokedex.R
-import com.naldana.pokedex.data.Pokemon
+import com.naldana.pokedex.data.entity.Pokemon
 import com.naldana.pokedex.repository.PokemonRepository
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
@@ -28,11 +28,7 @@ class PokedexViewModel(private val repository: PokemonRepository) : ViewModel() 
         _error.value = null
         viewModelScope.launch {
             try {
-                if (key.value.isNullOrEmpty()) {
-                    pokemon.value = Pokemon(0, "", 0, 0)
-                } else {
-                    pokemon.value = repository.search(key.value!!)
-                }
+                pokemon.value = repository.search(key.value!!)
             } catch (e: HttpException) {
                 _error.value = R.string.error_not_found
             } finally {

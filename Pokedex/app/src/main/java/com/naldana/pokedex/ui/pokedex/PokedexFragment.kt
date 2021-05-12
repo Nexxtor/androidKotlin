@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.naldana.pokedex.PokedexApplication
 import com.naldana.pokedex.R
 import com.naldana.pokedex.databinding.FragmentPokedexBinding
-import com.naldana.pokedex.repository.PokemonRepository
 
 /**
  * Pantalla de busqueda de pokemons
@@ -18,8 +18,8 @@ import com.naldana.pokedex.repository.PokemonRepository
 class PokedexFragment : Fragment() {
 
     private val pokedexFactory by lazy {
-        val repository = PokemonRepository()
-        PokedexViewModelFactory(repository)
+        val app = requireActivity().application as PokedexApplication
+        PokedexViewModelFactory(app.pokemonRepository)
     }
 
     private val pokedexViewModel: PokedexViewModel by viewModels {
