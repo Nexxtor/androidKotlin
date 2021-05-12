@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.naldana.pokedex.PokedexApplication
 import com.naldana.pokedex.R
 import com.naldana.pokedex.databinding.FragmentPokedexBinding
-import com.naldana.pokedex.repository.PokemonRepository
 
 /**
  * Show a list of all pokemons
@@ -20,9 +20,13 @@ class PokedexFragment : Fragment() {
     private var _binding: FragmentPokedexBinding? = null
     private val binding get() = _binding!!
 
+    private val application by lazy {
+        requireActivity().application as PokedexApplication
+    }
+
     // Va cambiar de lugar
     private val pokemonFactory: PokemonViewModelFactory by lazy {
-        val repository = PokemonRepository()
+        val repository = application.pokemonRepository
         PokemonViewModelFactory(repository)
     }
 

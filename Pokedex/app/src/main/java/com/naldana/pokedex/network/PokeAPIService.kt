@@ -1,7 +1,6 @@
 package com.naldana.pokedex.network
 
-import androidx.lifecycle.LiveData
-import com.naldana.pokedex.data.Pokemon
+import com.naldana.pokedex.data.entity.Pokemon
 import retrofit2.http.GET
 import retrofit2.http.Path
 
