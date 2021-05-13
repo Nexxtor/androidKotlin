@@ -9,15 +9,12 @@ interface PokemonDao {
     @Insert
     suspend fun insert(pokemon: Pokemon)
 
-    @Query("SELECT * FROM pokemon_table WHERE id = :id")
-    suspend fun search(id: Int): Pokemon
-
-    @Query("SELECT * FROM pokemon_table WHERE name like :name")
-    suspend fun search(name: String): Pokemon
+    @Query("SELECT * FROM pokemon_table WHERE id = :key or name = :key")
+    suspend fun search(key: String): Pokemon?
 
     @Update
-    fun update(pokemon: Pokemon)
+    suspend fun update(pokemon: Pokemon)
 
     @Delete
-    fun delete(pokemon: Pokemon)
+    suspend fun delete(pokemon: Pokemon)
 }

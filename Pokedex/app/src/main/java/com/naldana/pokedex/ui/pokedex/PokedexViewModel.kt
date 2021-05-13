@@ -28,7 +28,13 @@ class PokedexViewModel(private val repository: PokemonRepository) : ViewModel() 
         _error.value = null
         viewModelScope.launch {
             try {
-                pokemon.value = repository.search(key.value!!)
+                val key = key.value
+                if (key.isNullOrEmpty()) {
+                    _error.value = R.string.error_pokemon_empty
+                } else {
+                    pokemon.value = repository.search(key)
+                }
+
             } catch (e: HttpException) {
                 _error.value = R.string.error_not_found
             } finally {
