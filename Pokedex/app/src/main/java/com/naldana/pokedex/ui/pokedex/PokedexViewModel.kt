@@ -19,6 +19,7 @@ class PokedexViewModel(private val repository: PokemonRepository) : ViewModel() 
     val loading: LiveData<Int> get() = _loading
     private var _error = MutableLiveData<Int?>(null)
     val error: LiveData<Int?> get() = _error
+    val pokemons = repository.findAll()
 
     /**
      * Busca un pokemon

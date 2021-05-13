@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.naldana.pokedex.PokedexApplication
 import com.naldana.pokedex.R
 import com.naldana.pokedex.databinding.FragmentPokedexBinding
@@ -61,6 +62,17 @@ class PokedexFragment : Fragment() {
                 binding.searchTextLayout.error = getString(error)
             }
 
+        }
+
+        val rvAdpater = PokemonsRecyclerViewAdapter()
+
+        val rv = binding.pokemonsRecyclerView.apply {
+            adapter = rvAdpater
+            layoutManager = LinearLayoutManager(requireContext())
+        }
+
+        pokedexViewModel.pokemons.observe(viewLifecycleOwner) {
+            rvAdpater.setData(it)
         }
     }
 

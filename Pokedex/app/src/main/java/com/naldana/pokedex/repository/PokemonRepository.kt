@@ -20,4 +20,6 @@ class PokemonRepository(private val API: PokeAPI, private val pokemonDao: Pokemo
         pokemon
     }
 
+    fun findAll() = pokemonDao.findAll()
+
 }
