@@ -16,6 +16,7 @@ class PokedexViewModel(private val repository: PokemonRepository) : ViewModel() 
     var pokemon = MutableLiveData<Pokemon>()
     var loading = MutableLiveData<Int>(View.GONE)
     var error = MutableLiveData<Int?>(null)
+    var pokemons = repository.findAll()
 
     /**
      * Busca un pokemon con la clave dada

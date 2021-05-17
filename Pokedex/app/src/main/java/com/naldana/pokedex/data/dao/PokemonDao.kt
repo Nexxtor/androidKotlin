@@ -1,5 +1,6 @@
 package com.naldana.pokedex.data.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.naldana.pokedex.data.entity.Pokemon
 
@@ -14,6 +15,9 @@ interface PokemonDao {
 
     @Query("SELECT * FROM pokemon_table WHERE name like :key or id = :key")
     suspend fun search(key: String): Pokemon?
+
+    @Query("SELECT * FROM pokemon_table")
+    fun findAll(): LiveData<List<Pokemon>>
 
     @Delete
     fun delete(pokemon: Pokemon)

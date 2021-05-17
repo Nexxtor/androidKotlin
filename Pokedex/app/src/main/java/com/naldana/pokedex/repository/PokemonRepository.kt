@@ -18,4 +18,6 @@ class PokemonRepository(
         }
         pokemon
     }
+
+    fun findAll() = pokemonDao.findAll()
 }
