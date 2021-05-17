@@ -4,4 +4,5 @@
     <string name="error_empty_text">Por favor ingrese un nombre o numero de pokemon</string>
     <string name="hint_pokemon_search">Ingrese un nombre o id de pokemon</string>
     <string name="pokemon_data">Se encontro el pokemon\nID: %d\nNombre: %s</string>
+    <string name="text_asterisk">#</string>
 </resources>

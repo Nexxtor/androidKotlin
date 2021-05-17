@@ -6,8 +6,13 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.naldana.pokedex.data.dao.PokemonDao
 import com.naldana.pokedex.data.entity.Pokemon
+import com.naldana.pokedex.data.entity.PokemonType
 
-@Database(entities = [Pokemon::class], version = 1)
+@Database(
+    entities = [Pokemon::class, PokemonType::class],
+    version = 1,
+    exportSchema = true
+)
 abstract class PokedexDatabase : RoomDatabase() {
     abstract fun getPokemonDao(): PokemonDao
 
@@ -23,8 +28,10 @@ abstract class PokedexDatabase : RoomDatabase() {
         fun getDatabase(context: Context): PokedexDatabase {
             return INSTANCE ?: synchronized(this) {
                 val instance = Room
-                    .databaseBuilder(context, PokedexDatabase::class.java,
-                        "pokedex_db").build()
+                    .databaseBuilder(
+                        context, PokedexDatabase::class.java,
+                        "pokedex_db"
+                    ).build()
                 INSTANCE = instance
                 instance
             }

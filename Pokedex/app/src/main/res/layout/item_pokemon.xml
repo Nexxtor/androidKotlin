@@ -3,43 +3,100 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="4dp"
+    app:cardUseCompatPadding="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/idPokemon"
+            android:id="@+id/display_asterisk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/text_asterisk"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:textColor="#99000000"
+            app:layout_constraintStart_toStartOf="@+id/name_pokemon"
+            app:layout_constraintTop_toBottomOf="@+id/name_pokemon" />
+
+        <TextView
+            android:id="@+id/id_pokemon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:textColor="#99000000"
+            app:layout_constraintBottom_toBottomOf="@+id/display_asterisk"
+            app:layout_constraintStart_toEndOf="@+id/display_asterisk"
+            app:layout_constraintTop_toTopOf="@+id/display_asterisk"
+            tools:text="1" />
+
+        <TextView
+            android:id="@+id/name_pokemon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:layout_constraintStart_toEndOf="@+id/image_pokemon"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="1" />
-
-        <TextView
-            android:id="@+id/namePokemon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-            app:layout_constraintStart_toEndOf="@+id/idPokemon"
-            app:layout_constraintTop_toTopOf="@+id/idPokemon"
             tools:text="Pikachu" />
 
-        <TextView
-            android:id="@+id/idViewHolde"
+        <ImageView
+            android:id="@+id/image_pokemon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/id_pokemon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/name_pokemon"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/fav_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            app:layout_constraintStart_toEndOf="@+id/namePokemon"
-            app:layout_constraintTop_toTopOf="@+id/namePokemon" />
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/id_pokemon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/name_pokemon"
+            app:srcCompat="@drawable/ic_baseline_favorite" />
+
+        <HorizontalScrollView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/image_pokemon"
+            app:layout_constraintTop_toBottomOf="@+id/id_pokemon">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/pokemon_types"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:chipSpacing="8dp"
+                app:singleLine="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_example_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Grass" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chip_example_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="Fire" />
+
+            </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

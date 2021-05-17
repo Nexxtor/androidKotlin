@@ -14,10 +14,10 @@ class PokemonRepository(
         var pokemon = pokemonDao.search(key)
         if (pokemon == null) {
             pokemon = api.service.getPokemon(key)
-            pokemonDao.insert(pokemon)
+            pokemonDao.insertPokemonWhitType(pokemon)
         }
         pokemon
     }
 
-    fun findAll() = pokemonDao.findAll()
+    fun findAll() = pokemonDao.getPokemonsWhitType()
 }
