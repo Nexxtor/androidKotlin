@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">01FomularioBasico</string>
+    <string name="text_name">Nombre</string>
+    <string name="hint_name">Néstor Aldana</string>
+    <string name="action_greet">Saludar</string>
+    <string name="helper_greeting">Ingrese su nombre para se saludado</string>
+    <string name="template_greeting">Hola %s, bienvenido al del desarrollo movil</string>
+</resources>
