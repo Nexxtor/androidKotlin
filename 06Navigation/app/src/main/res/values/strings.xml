@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">06Navigation</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="action_cambiar">Cambiar</string>
+    <string name="greeting_text">Hello %s!</string>
+    <string name="hint_nombre">Nombre</string>
+    <string name="action_continue">Continuar</string>
+    <string name="hint_apellido">Apellido</string>
+
+</resources>
