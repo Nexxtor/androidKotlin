@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="serif-monospace"
-        android:text="Bienvenidos a"
+        android:text="@string/welcome_to"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="34sp" />
@@ -28,9 +28,8 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:fontFamily="serif-monospace"
-        android:text="Programación de Dispositivos Móviles"
+        android:text="@string/subject"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="34sp" />
