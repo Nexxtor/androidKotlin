@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">03-LinearLayout</string>
+    <string name="text_name">Name</string>
+    <string name="hint_name">Write a name</string>
+    <string name="action_send">Send</string>
+    <string name="greeting_text">Hello, %s</string>
+</resources>
