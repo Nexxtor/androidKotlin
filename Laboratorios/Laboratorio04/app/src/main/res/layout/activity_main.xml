@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/fill_information_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/medium_gap"
+        android:layout_marginBottom="@dimen/large_gap"
+        android:fontFamily="monospace"
+        android:text="@string/fill_the_information"
+        android:textColor="@color/black"
+        android:textSize="@dimen/main_text_size"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/name_edit_text"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/name_edit_text"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/name_label"
+        android:layout_marginLeft="@dimen/medium_gap"
+        android:layout_marginRight="@dimen/medium_gap"
+        app:layout_constraintBottom_toTopOf="@+id/email_edit_text"
+        app:layout_constraintEnd_toEndOf="@+id/email_edit_text"
+        app:layout_constraintStart_toStartOf="@+id/email_edit_text"
+        android:layout_marginBottom="@dimen/medium_gap">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/name_edit_text_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textSize="@dimen/regular_text_size"
+            android:textColor="@color/black"
+            android:inputType="text"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email_edit_text"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/email_label"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="@dimen/medium_gap"
+        android:layout_marginRight="@dimen/medium_gap">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email_edit_text_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textSize="@dimen/regular_text_size"
+            android:textColor="@color/black"
+            android:inputType="textEmailAddress"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cellphone_number_edit_text"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/cellphone_label"
+        app:layout_constraintEnd_toEndOf="@+id/email_edit_text"
+        app:layout_constraintStart_toStartOf="@+id/email_edit_text"
+        app:layout_constraintTop_toBottomOf="@+id/email_edit_text"
+        android:layout_marginRight="@dimen/medium_gap"
+        android:layout_marginLeft="@dimen/medium_gap"
+        android:layout_marginTop="@dimen/large_gap">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cellphone_number_edit_text_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textSize="@dimen/regular_text_size"
+            android:textColor="@color/black"
+            android:inputType="number"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/action_save_button"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save_label"
+        android:layout_marginTop="@dimen/large_gap"
+        app:layout_constraintEnd_toEndOf="@+id/cellphone_number_edit_text"
+        app:layout_constraintStart_toStartOf="@+id/cellphone_number_edit_text"
+        app:layout_constraintTop_toBottomOf="@+id/cellphone_number_edit_text" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
