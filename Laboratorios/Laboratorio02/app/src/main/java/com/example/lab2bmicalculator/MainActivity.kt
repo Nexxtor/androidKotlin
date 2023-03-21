@@ -59,12 +59,11 @@ class MainActivity : AppCompatActivity() {
 
     // Weight must be in kg
     // Height must be in m
-    private fun calculateBmi(weight: Float, height: Float): Float {
-        return weight / ( (height / 100) * (height / 100))
-    }
+    private fun calculateBmi(weight: Float, height: Float): Float = weight / ( (height / 100) * (height / 100))
+
 
     private fun validateInput(weight: String?, height: String?): Boolean {
-        when {
+        return when {
             weight.isNullOrEmpty() -> {
                 Toast.makeText(this, "Weight is empty!", Toast.LENGTH_SHORT).show()
                 return false
@@ -73,32 +72,32 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Height is empty!", Toast.LENGTH_SHORT).show()
                 return false
             }
+            else -> true
         }
-        return true
     }
 
     private fun displayResult(bmi: Float) {
         bmiTextView.text = bmi.toString()
-        infoTextView.text = "(Normal range is 18.5 - 24.9)"
+        infoTextView.text = getString(R.string.normal_weight_info)
 
         var informationResult = ""
         var color = 0
 
         when {
             bmi < 18.50 -> {
-                informationResult = "Under weight"
+                informationResult = getString(R.string.under_weight_label)
                 color = R.color.under_weight
             }
             bmi in 18.50..24.99 -> {
-                informationResult = "Healthy"
+                informationResult = getString(R.string.healthy_label)
                 color = R.color.normal_weight
             }
             bmi in 25.00..29.99 -> {
-                informationResult = "Over weight"
+                informationResult = getString(R.string.over_weight_label)
                 color = R.color.over_weight
             }
             bmi > 29.99 -> {
-                informationResult = "Obese"
+                informationResult = getString(R.string.obese_label)
                 color = R.color.obese
             }
         }
