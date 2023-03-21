@@ -16,7 +16,7 @@
         android:text="@string/welcome_to"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="34sp" />
+        android:textSize="@dimen/main_text_size" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -32,5 +32,5 @@
         android:text="@string/subject"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textSize="34sp" />
+        android:textSize="@dimen/main_text_size" />
 </LinearLayout>
