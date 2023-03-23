@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">09-ViewModel</string>
+    <string name="send_action">Send</string>
+    <string name="hint_write_a_name">Write a name</string>
+</resources>
