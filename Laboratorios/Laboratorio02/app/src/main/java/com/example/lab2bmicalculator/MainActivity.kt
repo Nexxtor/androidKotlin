@@ -57,8 +57,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // Weight must be in kg
-    // Height must be in m
+    /*
+    @param  weight  decimal value that represents the weight of a person in kilograms
+    @param  height  decimal value that represents the height of a person in centimeters
+    @return         decimal value that represents the BMI of a person
+    */
     private fun calculateBmi(weight: Float, height: Float): Float = weight / ( (height / 100) * (height / 100))
 
 
