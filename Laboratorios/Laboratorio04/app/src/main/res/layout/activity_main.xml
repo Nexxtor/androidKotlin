@@ -85,9 +85,10 @@
 
     <Button
         android:id="@+id/action_save_button"
-        style="?attr/materialButtonOutlinedStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/button_color"
+        android:textColor="@color/black"
         android:text="@string/save_label"
         android:layout_marginTop="@dimen/large_gap"
         app:layout_constraintEnd_toEndOf="@+id/cellphone_number_edit_text"

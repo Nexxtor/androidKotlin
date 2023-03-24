@@ -82,7 +82,8 @@
 
     <Button
         android:id="@+id/action_share_button"
-        style="?attr/materialButtonOutlinedStyle"
+        android:backgroundTint="@color/button_color"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/large_gap"
