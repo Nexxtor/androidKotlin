@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
     // declare the views
     private lateinit var nameEditTextValue: EditText
     private lateinit var emailEditTextValue: EditText
-    private lateinit var cellphoneEditTextValue: EditText
+    private lateinit var cellphoneNumberEditTextValue: EditText
     private lateinit var actionSaveButton: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         // bind the views to the variables
         nameEditTextValue = findViewById(R.id.name_edit_text_value)
         emailEditTextValue = findViewById(R.id.email_edit_text_value)
-        cellphoneEditTextValue = findViewById(R.id.cellphone_number_edit_text_value)
+        cellphoneNumberEditTextValue = findViewById(R.id.cellphone_number_edit_text_value)
         actionSaveButton = findViewById(R.id.action_save_button)
     }
 
@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
             // get the values from the views
             val name = nameEditTextValue.text.toString()
             val email = emailEditTextValue.text.toString()
-            val cellphone = cellphoneEditTextValue.text.toString()
+            val cellphone = cellphoneNumberEditTextValue.text.toString()
 
             // create the intent
             val intent = Intent(this, ShareActivity::class.java)

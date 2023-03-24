@@ -61,22 +61,22 @@
         tools:text="test@gmail.com" />
 
     <TextView
-        android:id="@+id/cellphone_label"
+        android:id="@+id/cellphone_number_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/LabelText"
         android:text="@string/cellphone_label"
         app:layout_constraintStart_toStartOf="@+id/email_label"
-        app:layout_constraintTop_toTopOf="@+id/cellphone_text_view" />
+        app:layout_constraintTop_toTopOf="@+id/cellphone_number_text_view" />
 
     <TextView
-        android:id="@+id/cellphone_text_view"
+        android:id="@+id/cellphone_number_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/small_gap"
         android:layout_marginTop="@dimen/medium_gap"
         style="@style/RegularText"
-        app:layout_constraintStart_toEndOf="@+id/cellphone_label"
+        app:layout_constraintStart_toEndOf="@+id/cellphone_number_label"
         app:layout_constraintTop_toBottomOf="@+id/email_text_view"
         tools:text="11111111" />
 
@@ -89,6 +89,6 @@
         android:text="@string/share_label"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cellphone_text_view" />
+        app:layout_constraintTop_toBottomOf="@+id/cellphone_number_text_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,13 +11,12 @@ class ShareActivity : AppCompatActivity() {
     // declare the views
     private lateinit var nameTextView: TextView
     private lateinit var emailTextView: TextView
-    private lateinit var cellphoneTextView: TextView
+    private lateinit var cellphoneNumberTextView: TextView
     private lateinit var actionShareButton: Button
 
-    // declare the variables to store the data from the other activity
-    private lateinit var name: String
-    private lateinit var email: String
-    private lateinit var cellphone: String
+    private var name = ""
+    private var email = ""
+    private var cellphoneNumber = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +30,7 @@ class ShareActivity : AppCompatActivity() {
         // bind the views to the variables
         nameTextView = findViewById(R.id.name_text_view)
         emailTextView = findViewById(R.id.email_text_view)
-        cellphoneTextView = findViewById(R.id.cellphone_text_view)
+        cellphoneNumberTextView = findViewById(R.id.cellphone_number_text_view)
         actionShareButton = findViewById(R.id.action_share_button)
     }
 
@@ -39,12 +38,12 @@ class ShareActivity : AppCompatActivity() {
         // get the values from the intent
         name = intent.getStringExtra("name").toString()
         email = intent.getStringExtra("email").toString()
-        cellphone = intent.getStringExtra("cellphone").toString()
+        cellphoneNumber = intent.getStringExtra("cellphone").toString()
 
         // set the values in the views
         nameTextView.text = name
         emailTextView.text = email
-        cellphoneTextView.text = cellphone
+        cellphoneNumberTextView.text = cellphoneNumber
     }
 
     private fun setOnClickListeners() {
@@ -54,7 +53,7 @@ class ShareActivity : AppCompatActivity() {
 
             // put the values in the intent
             shareIntent.type = "text/plain"
-            shareIntent.putExtra(Intent.EXTRA_TEXT, "Name: $name\nEmail: $email\nCellphone: $cellphone")
+            shareIntent.putExtra(Intent.EXTRA_TEXT, "Name: $name\nEmail: $email\nCellphone: $cellphoneNumber")
 
             // start the activity with the intent and the chooser
             startActivity(Intent.createChooser(shareIntent, "Share to:"))
