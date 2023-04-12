@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">11-DatabindingLiveData</string>
+    <string name="hint_write_a_name">Write a name</string>
+    <string name="caption_name">Name</string>
+</resources>
