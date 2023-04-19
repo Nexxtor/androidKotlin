@@ -1,16 +1,15 @@
-package com.naldana.booktrackersec02.ui
+package com.naldana.booktrackersec02.ui.books
 
-import android.database.DatabaseUtils
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import com.naldana.booktrackersec02.R
 import com.naldana.booktrackersec02.databinding.FragmentBooksBinding
-import com.naldana.booktrackersec02.viewmodels.BooksViewModel
 
 class BooksFragment : Fragment() {
 
@@ -35,6 +34,17 @@ class BooksFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.getBooks()
+
+        val adapter = BooksAdapter { book ->
+            Toast.makeText(
+                requireContext(),
+                "Clic en ${book.title} ",
+                Toast.LENGTH_LONG
+            ).show()
+        }
+        adapter.submitData(viewModel.getBooks())
+
+        binding.recyclerBooks.adapter = adapter
+
     }
 }
