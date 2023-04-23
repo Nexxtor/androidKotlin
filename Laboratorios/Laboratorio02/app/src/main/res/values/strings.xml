@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Laboratorio02</string>
+
+    <string name="bmi">BMI</string>
+    <string name="action_calculate_text">Calculate</string>
+
+    <string name="weight_text">Weight</string>
+    <string name="weight_hint_text">70</string>
+    <string name="kg_text">Kg</string>
+
+    <string name="height_text">Height</string>
+    <string name="height_hint_text">180</string>
+    <string name="cm_text">cm</string>
+
+    <string name="normal_weight_info">(Normal range is 18.5 – 24.9)</string>
+    <string name="under_weight_label">Under weight</string>
+    <string name="healthy_label">Healthy</string>
+    <string name="over_weight_label">Over weight</string>
+    <string name="obese_label">Obese</string>
+</resources>

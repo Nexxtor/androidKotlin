@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_width">350dp</dimen>
+    <dimen name="card_height">200dp</dimen>
+    <dimen name="small_card_height">150dp</dimen>
+    <dimen name="card_elevation">15dp</dimen>
+    <dimen name="card_corner_radius">20dp</dimen>
+
+    <dimen name="title_size">24sp</dimen>
+
+    <dimen name="extra_large_text_size">60sp</dimen>
+    <dimen name="large_text_size">32sp</dimen>
+    <dimen name="medium_text_size">24sp</dimen>
+    <dimen name="small_text_size">16sp</dimen>
+    <dimen name="action_calculate_size">20sp</dimen>
+
+    <dimen name="button_elevation">20dp</dimen>
+    <dimen name="button_padding">8dp</dimen>
+    
+    <dimen name="extra_small_gap">4dp</dimen>
+    <dimen name="small_gap">10dp</dimen>
+    <dimen name="medium_gap">16dp</dimen>
+    <dimen name="big_gap">24dp</dimen>
+</resources>

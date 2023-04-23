@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/money_value_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/large_gap"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/moneyValue"
+        android:textColor="@color/black"
+        android:textSize="@dimen/money_amount_text_size"
+        app:layout_constraintEnd_toEndOf="@+id/money_amount_text_view"
+        app:layout_constraintStart_toStartOf="@+id/money_amount_text_view"
+        app:layout_constraintTop_toBottomOf="@+id/money_amount_text_view" />
+
+    <TextView
+        android:id="@+id/money_amount_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/extra_large_gap"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/howMuchMoney"
+        android:textColor="@color/black"
+        android:textSize="@dimen/money_label_text_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/ten_cents_image_view"
+        android:layout_width="@dimen/image_view_size"
+        android:layout_height="@dimen/image_view_size"
+        android:clickable="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/five_cents_image_view"
+        app:layout_constraintTop_toTopOf="@+id/five_cents_image_view"
+        app:srcCompat="@drawable/ten_cents" />
+
+    <ImageView
+        android:id="@+id/five_cents_image_view"
+        android:layout_width="@dimen/image_view_size"
+        android:layout_height="@dimen/image_view_size"
+        android:layout_marginTop="@dimen/large_gap"
+        app:layout_constraintEnd_toStartOf="@+id/ten_cents_image_view"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/money_value_text_view"
+        app:srcCompat="@drawable/five_cents" />
+
+    <ImageView
+        android:id="@+id/dollar_image_view"
+        android:layout_width="@dimen/image_view_size"
+        android:layout_height="@dimen/image_view_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/quarter_image_view"
+        app:layout_constraintTop_toTopOf="@+id/quarter_image_view"
+        app:srcCompat="@drawable/one_dollar" />
+
+    <ImageView
+        android:id="@+id/quarter_image_view"
+        android:layout_width="@dimen/image_view_size"
+        android:layout_height="@dimen/image_view_size"
+        android:layout_marginTop="@dimen/medium_gap"
+        app:layout_constraintEnd_toStartOf="@+id/dollar_image_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fiveCentsTV"
+        app:srcCompat="@drawable/quarter" />
+
+    <TextView
+        android:id="@+id/fiveCentsTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_gap"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/fiveCentsValue"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/five_cents_image_view"
+        app:layout_constraintStart_toStartOf="@+id/five_cents_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/five_cents_image_view" />
+
+    <TextView
+        android:id="@+id/tenCentsTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_gap"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/tenCentsValue"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/ten_cents_image_view"
+        app:layout_constraintStart_toStartOf="@+id/ten_cents_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/ten_cents_image_view" />
+
+    <TextView
+        android:id="@+id/quarterTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_gap"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/quarterValue"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/quarter_image_view"
+        app:layout_constraintStart_toStartOf="@+id/quarter_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/quarter_image_view" />
+
+    <TextView
+        android:id="@+id/dollarTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_gap"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/dollarValue"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/dollar_image_view"
+        app:layout_constraintStart_toStartOf="@+id/dollar_image_view"
+        app:layout_constraintTop_toBottomOf="@+id/dollar_image_view" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="RegularText" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/regular_text_size</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">monospace</item>
+    </style>
+
+    <style name="LargeText" parent="RegularText">
+        <item name="android:textSize">@dimen/main_text_size</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="LabelText" parent="RegularText">
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>
