@@ -1,4 +1,4 @@
-package com.naldana.booktrackersec01.data
+package com.naldana.booktrackersec01.data.models
 
 data class Publisher(
     val name: String,

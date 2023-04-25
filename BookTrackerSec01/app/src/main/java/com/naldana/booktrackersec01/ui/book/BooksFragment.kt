@@ -33,9 +33,14 @@ class BooksFragment : Fragment() {
         val adapter = BookAdapter {
             Toast.makeText(requireContext(), "Click en ${it.title}", Toast.LENGTH_LONG).show()
         }
-        adapter.submitData(viewModel.getBooks())
+
 
         binding.recylerViewBooks.adapter = adapter
+        binding.lifecycleOwner = viewLifecycleOwner
+
+        viewModel.getBooks().observe(viewLifecycleOwner) { books ->
+            adapter.submitData(books)
+        }
     }
 
 }

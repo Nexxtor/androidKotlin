@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.naldana.booktrackersec01.R
-import com.naldana.booktrackersec01.data.Book
+import com.naldana.booktrackersec01.data.models.Book
 
 class BookAdapter(private val onClickBook: (Book) -> Unit) : RecyclerView.Adapter<BookAdapter.ViewHolderBook>() {
 
@@ -38,5 +38,6 @@ class BookAdapter(private val onClickBook: (Book) -> Unit) : RecyclerView.Adapte
 
     fun submitData(books: List<Book>) {
         this.books = books
+        notifyDataSetChanged()
     }
 }
