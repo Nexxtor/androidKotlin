@@ -1,12 +1,12 @@
 package com.naldana.booktrackersec02.repositories
 
-import com.naldana.booktrackersec02.data.Author
-import com.naldana.booktrackersec02.data.Book
+import com.naldana.booktrackersec02.data.dao.BookDao
+import com.naldana.booktrackersec02.data.models.Author
+import com.naldana.booktrackersec02.data.models.Book
 
-class BooksRepository(private val books: List<Book>) {
+class BooksRepository(private val booksDao: BookDao) {
 
-    fun getBooks() = books
+    fun getBooks() = booksDao.getBooks()
 
-    fun getBooksByAuthor(author: Author) =
-        books.filter { book -> book.authors.contains(author) }
+    fun getBooksByIsbn(isbn: String) = booksDao.getBook(isbn)
 }

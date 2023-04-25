@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
+import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import com.naldana.booktrackersec02.R
 import com.naldana.booktrackersec02.databinding.FragmentBooksBinding
 
@@ -17,6 +19,7 @@ class BooksFragment : Fragment() {
     private val viewModel: BooksViewModel by viewModels {
         BooksViewModel.Factory
     }
+    private lateinit var navController: NavController
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,14 +38,16 @@ class BooksFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        navController = findNavController()
+
         val adapter = BooksAdapter { book ->
-            Toast.makeText(
-                requireContext(),
-                "Clic en ${book.title} ",
-                Toast.LENGTH_LONG
-            ).show()
+          navController.navigate(R.id.bookFragment)
         }
-        adapter.submitData(viewModel.getBooks())
+
+        viewModel.getBooks().observe(viewLifecycleOwner) { books ->
+            adapter.submitData(books)
+        }
+
 
         binding.recyclerBooks.adapter = adapter
 

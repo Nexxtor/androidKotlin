@@ -12,11 +12,6 @@ import com.naldana.booktrackersec02.R
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [BookFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class BookFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
