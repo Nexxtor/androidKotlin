@@ -8,5 +8,8 @@ class BooksRepository(private val booksDao: BookDao) {
 
     fun getBooks() = booksDao.getBooks()
 
-    fun getBooksByIsbn(isbn: String) = booksDao.getBook(isbn)
+    suspend fun getBooksByIsbn(isbn: String) = booksDao.getBook(isbn)
+    suspend fun insertBook(book: Book) {
+        booksDao.insertBook(book)
+    }
 }

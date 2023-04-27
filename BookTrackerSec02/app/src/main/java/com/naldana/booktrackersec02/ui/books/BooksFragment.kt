@@ -6,12 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.math.MathUtils
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.naldana.booktrackersec02.R
+import com.naldana.booktrackersec02.data.models.Book
 import com.naldana.booktrackersec02.databinding.FragmentBooksBinding
+import kotlin.random.Random
 
 class BooksFragment : Fragment() {
 
@@ -41,7 +44,7 @@ class BooksFragment : Fragment() {
         navController = findNavController()
 
         val adapter = BooksAdapter { book ->
-          navController.navigate(R.id.bookFragment)
+            navController.navigate(R.id.bookFragment)
         }
 
         viewModel.getBooks().observe(viewLifecycleOwner) { books ->
@@ -50,6 +53,7 @@ class BooksFragment : Fragment() {
 
 
         binding.recyclerBooks.adapter = adapter
+
 
     }
 }

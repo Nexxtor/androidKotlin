@@ -5,27 +5,32 @@ import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
+import androidx.room.Transaction
 import androidx.room.Update
 import com.naldana.booktrackersec02.data.models.Book
+import com.naldana.booktrackersec02.data.models.BookAndPublisher
 
 @Dao
 interface BookDao {
 
     @Insert
-    fun insertBook(book: Book)
+    suspend fun insertBook(book: Book)
 
     @Insert
-    fun insertAllBook(book: List<Book>)
+    suspend fun insertAllBook(book: List<Book>)
 
     @Update
-    fun updateBook(book: Book)
+    suspend fun updateBook(book: Book)
 
     @Delete
-    fun deleteBook(book: Book)
+    suspend fun deleteBook(book: Book)
 
     @Query("SELECT * FROM book_table")
     fun getBooks(): LiveData<List<Book>>
 
     @Query("SELECT * FROM book_table WHERE isbn = :isbn")
-    fun getBook(isbn: String): Book
+    suspend fun getBook(isbn: String): Book
+    @Transaction
+    @Query("SELECT * FROM publisher_table")
+    fun getBookAndPublisher(): LiveData<List<BookAndPublisher>>
 }

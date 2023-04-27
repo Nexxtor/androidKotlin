@@ -11,7 +11,8 @@ data class Book(
     val pageCount: Int,
     val subject: String,
     val summary: String,
-    val isbn: String
+    val isbn: String,
+    val publisherId: Long
 ) {
     /* TODO(1) : Cambios en el modelo
         La anotacion Ignore no funciona, si esta en el contructor por defecto
@@ -20,5 +21,4 @@ data class Book(
     @PrimaryKey(autoGenerate = true) var id: Long = 0L
     /* TODO: Los siguiente atributos cambiaran al tener ROOM con las entidades relaccionadas */
     @Ignore val authors: List<Author>? = null
-    @Ignore val publisher: Publisher? = null
 }

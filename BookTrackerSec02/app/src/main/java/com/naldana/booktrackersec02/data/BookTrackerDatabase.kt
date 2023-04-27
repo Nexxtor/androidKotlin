@@ -7,8 +7,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.naldana.booktrackersec02.data.dao.BookDao
 import com.naldana.booktrackersec02.data.models.Book
+import com.naldana.booktrackersec02.data.models.Publisher
 
-@Database(entities = [Book::class], version = 1)
+@Database(entities = [Book::class, Publisher::class], version = 2)
 abstract class BookTrackerDatabase : RoomDatabase() {
     abstract fun bookDao(): BookDao
 
@@ -23,7 +24,7 @@ abstract class BookTrackerDatabase : RoomDatabase() {
                         application.applicationContext,
                         BookTrackerDatabase::class.java,
                         "booktracker"
-                    ).build()
+                    ).fallbackToDestructiveMigration().build()
                 INSTANCE = instance
                 instance
             }
