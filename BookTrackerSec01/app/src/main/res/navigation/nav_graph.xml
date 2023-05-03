@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/booksFragment">
 
     <fragment
         android:id="@+id/booksFragment"
-        android:name="com.naldana.booktrackersec01.ui.book.BooksFragment"
-        android:label="BooksFragment" />
+        android:name="com.naldana.booktrackersec01.ui.book.list.BooksFragment"
+        android:label="BooksFragment" >
+        <action
+            android:id="@+id/action_booksFragment_to_newBookFragment"
+            app:destination="@id/newBookFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newBookFragment"
+        android:name="com.naldana.booktrackersec01.ui.book.create.NewBookFragment"
+        android:label="fragment_new_book"
+        tools:layout="@layout/fragment_new_book" />
 </navigation>

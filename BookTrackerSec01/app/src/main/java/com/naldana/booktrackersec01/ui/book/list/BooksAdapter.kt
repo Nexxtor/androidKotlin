@@ -1,4 +1,4 @@
-package com.naldana.booktrackersec01.ui.book
+package com.naldana.booktrackersec01.ui.book.list
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.naldana.booktrackersec01.R
 import com.naldana.booktrackersec01.data.models.Book
 
-class BookAdapter(private val onClickBook: (Book) -> Unit) : RecyclerView.Adapter<BookAdapter.ViewHolderBook>() {
+class BooksAdapter(private val onClickBook: (Book) -> Unit) : RecyclerView.Adapter<BooksAdapter.ViewHolderBook>() {
 
     private var books: List<Book>? = null
 

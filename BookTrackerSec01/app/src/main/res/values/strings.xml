@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">BookTrackerSec01</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_title">Book Title</string>
+    <string name="text_subject">Subject</string>
+    <string name="text_summary">Summary</string>
+    <string name="text_page_count">Page Count</string>
+    <string name="text_isbn">ISBN</string>
+    <string name="text_save">Save</string>
+    <string name="error_required">Este campo es requerido</string>
 </resources>

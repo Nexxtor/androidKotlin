@@ -1,4 +1,4 @@
-package com.naldana.booktrackersec01.ui.book
+package com.naldana.booktrackersec01.ui.book.list
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.naldana.booktrackersec01.R
 import com.naldana.booktrackersec01.databinding.FragmentBooksBinding
 
@@ -30,7 +31,7 @@ class BooksFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = BookAdapter {
+        val adapter = BooksAdapter {
             Toast.makeText(requireContext(), "Click en ${it.title}", Toast.LENGTH_LONG).show()
         }
 
@@ -41,6 +42,11 @@ class BooksFragment : Fragment() {
         viewModel.getBooks().observe(viewLifecycleOwner) { books ->
             adapter.submitData(books)
         }
+
+        binding.addBookAction.setOnClickListener {
+            findNavController().navigate(R.id.action_booksFragment_to_newBookFragment)
+        }
+
     }
 
 }
