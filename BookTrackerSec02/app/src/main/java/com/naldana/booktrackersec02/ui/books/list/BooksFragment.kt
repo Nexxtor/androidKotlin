@@ -1,20 +1,16 @@
-package com.naldana.booktrackersec02.ui.books
+package com.naldana.booktrackersec02.ui.books.list
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.math.MathUtils
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.naldana.booktrackersec02.R
-import com.naldana.booktrackersec02.data.models.Book
 import com.naldana.booktrackersec02.databinding.FragmentBooksBinding
-import kotlin.random.Random
 
 class BooksFragment : Fragment() {
 
@@ -44,13 +40,16 @@ class BooksFragment : Fragment() {
         navController = findNavController()
 
         val adapter = BooksAdapter { book ->
-            navController.navigate(R.id.bookFragment)
+           // TODO Open detail fragment of book
         }
 
         viewModel.getBooks().observe(viewLifecycleOwner) { books ->
             adapter.submitData(books)
         }
 
+        binding.addBook.setOnClickListener {
+            navController.navigate(R.id.action_booksFragment_to_formBookFragment2)
+        }
 
         binding.recyclerBooks.adapter = adapter
 

@@ -1,4 +1,4 @@
-package com.naldana.booktrackersec02.ui.books
+package com.naldana.booktrackersec02.ui.books.list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

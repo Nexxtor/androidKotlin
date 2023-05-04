@@ -1,4 +1,4 @@
-package com.naldana.booktrackersec02.ui.books
+package com.naldana.booktrackersec02.ui.books.list
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
