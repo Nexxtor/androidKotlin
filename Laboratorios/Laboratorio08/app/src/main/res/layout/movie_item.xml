@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/movie_item_card_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/mediumGap"
+            android:backgroundTint="@color/cardLayout"
+            app:cardCornerRadius="@dimen/smallGap"
+            app:cardMaxElevation="@dimen/mediumGap"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="@dimen/LargeGap"
+                    android:layout_height="@dimen/LargeGap"
+                    android:layout_margin="@dimen/smallGap"
+                    app:shapeAppearanceOverlay="@style/RoundedSquare"
+                    android:src="@drawable/no_image"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginStart="@dimen/smallGap">
+
+                    <TextView
+                        android:id="@+id/title_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/mediumGap"
+                        android:layout_marginEnd="@dimen/mediumGap"
+                        android:fontFamily="sans-serif-condensed"
+                        android:text="@string/starWarsText"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/mediumLargeTextGap" />
+
+                    <TextView
+                        android:id="@+id/qualification_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-condensed-medium"
+                        android:text="@string/starWarsCalification"
+                        android:textColor="@color/calification"
+                        android:textSize="@dimen/largeTextGap"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

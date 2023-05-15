@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.movie.BillboardFragment"
+    android:background="@color/backgroundLayout">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/mediumGap"
+        android:gravity="center"
+        android:text="@string/billboard"
+        android:textSize="@dimen/extraLargeTextGap"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/starWarsCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/mediumGap"
+        android:backgroundTint="@color/cardLayout"
+        app:cardMaxElevation="@dimen/mediumGap"
+        app:cardCornerRadius="@dimen/smallGap"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/LargeGap"
+                android:layout_height="@dimen/LargeGap"
+                android:layout_margin="@dimen/smallGap"
+                android:src="@drawable/starawars" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mediumGap"
+                    android:layout_marginEnd="@dimen/mediumGap"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="@string/starWarsText"
+                    android:textSize="@dimen/mediumLargeTextGap"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="@string/starWarsCalification"
+                    android:textSize="@dimen/largeTextGap"
+                    android:textStyle="bold"
+                    android:textColor="@color/calification"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/harryPotterCardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/mediumGap"
+        android:backgroundTint="@color/cardLayout"
+        app:cardMaxElevation="@dimen/mediumGap"
+        app:cardCornerRadius="@dimen/smallGap"
+        app:layout_constraintEnd_toEndOf="@+id/starWarsCardView"
+        app:layout_constraintStart_toStartOf="@+id/starWarsCardView"
+        app:layout_constraintTop_toBottomOf="@+id/starWarsCardView">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/LargeGap"
+                android:layout_height="@dimen/LargeGap"
+                android:layout_margin="@dimen/smallGap"
+                android:src="@drawable/harrypotter" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/mediumGap"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="@string/harryPotterText"
+                    android:layout_marginEnd="@dimen/mediumGap"
+                    android:textSize="@dimen/mediumLargeTextGap"
+                    android:textColor="@color/white"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed-medium"
+                    android:text="@string/harryPotterCalification"
+                    android:textSize="@dimen/largeTextGap"
+                    android:textStyle="bold"
+                    android:textColor="@color/calification"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnNavCreateNewMovie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/mediumGap"
+        android:backgroundTint="@color/buttonColor"
+        android:src="@drawable/addmovie"
+        app:borderWidth="@dimen/noGap"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

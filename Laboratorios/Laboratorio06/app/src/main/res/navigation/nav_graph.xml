@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/billboardFragment">
+
+    <fragment
+        android:id="@+id/movieFragment"
+        android:name="com.example.laboratorio05.ui.movie.MovieFragment"
+        android:label="fragment_movie"
+        tools:layout="@layout/fragment_movie" />
+    <fragment
+        android:id="@+id/billboardFragment"
+        android:name="com.example.laboratorio05.ui.movie.BillboardFragment"
+        android:label="fragment_billboard"
+        tools:layout="@layout/fragment_billboard" >
+        <action
+            android:id="@+id/action_billboardFragment_to_movieFragment"
+            app:destination="@id/movieFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_billboardFragment_to_newMovieFragment"
+            app:destination="@id/newMovieFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/newMovieFragment"
+        android:name="com.example.laboratorio05.ui.movie.NewMovieFragment"
+        android:label="fragment_new_movie"
+        tools:layout="@layout/fragment_new_movie" />
+</navigation>
