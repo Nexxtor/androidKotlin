@@ -1,9 +1,9 @@
-package com.naldana.pokemonApp.network
+package com.naldana.pokemonApp.data.network
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.naldana.pokemonApp.models.Pokemon
-import com.naldana.pokemonApp.network.services.PokemonService
+import com.naldana.pokemonApp.data.db.models.Pokemon
+import com.naldana.pokemonApp.data.network.services.PokemonService
 import retrofit2.HttpException
 import java.io.IOException
 

@@ -12,6 +12,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
 import com.naldana.pokemonApp.R
 import com.naldana.pokemonApp.databinding.FragmentPokemonListBinding
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -43,19 +44,24 @@ class PokemonListFragment : Fragment() {
         val adapter = PokemonAdapter(PokemonAdapter.PokemonComparator)
 
         lifecycleScope.launch {
-            viewModel.pokemons.collectLatest { data ->
+            viewModel.pokemons.collect { data ->
                 adapter.submitData(data)
             }
         }
 
+        binding.swipeRefreshPokemon.setOnRefreshListener {
+            adapter.refresh()
+        }
+
         lifecycleScope.launch {
-            adapter.loadStateFlow.collectLatest { loadStates ->
+            adapter.loadStateFlow.collect { loadStates ->
                 binding.progressBar.isVisible =
                     loadStates.append is LoadState.Loading
                             || loadStates.prepend is LoadState.Loading
                             || loadStates.append is LoadState.Loading
                             || loadStates.refresh is LoadState.Loading
                 //binding.progressBar.isVisible = loadStates.refresh is LoadState.Loading
+                binding.swipeRefreshPokemon.isRefreshing = loadStates.refresh is LoadState.Loading
             }
         }
         rv.adapter = adapter

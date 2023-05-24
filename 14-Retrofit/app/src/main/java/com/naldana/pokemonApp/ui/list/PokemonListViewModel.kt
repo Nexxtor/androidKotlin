@@ -6,16 +6,18 @@ import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.AP
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
+import androidx.paging.ExperimentalPagingApi
 import androidx.paging.cachedIn
 import com.naldana.pokemonApp.PokemonApplication
-import com.naldana.pokemonApp.models.Pokemon
+import com.naldana.pokemonApp.data.db.models.Pokemon
 import com.naldana.pokemonApp.repositories.PokemonRepository
 import kotlinx.coroutines.launch
 
 class PokemonListViewModel(private val pokemonRepository: PokemonRepository) : ViewModel() {
 
+    @OptIn(ExperimentalPagingApi::class)
     val pokemons = pokemonRepository
-        .getPokemonPage(10)
+        .getPokemonPage(100)
 
 
     companion object {

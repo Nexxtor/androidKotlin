@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.naldana.pokemonApp.R
-import com.naldana.pokemonApp.models.Pokemon
+import com.naldana.pokemonApp.data.db.models.Pokemon
 
 class PokemonAdapter(differCallback: DiffUtil.ItemCallback<Pokemon>) :
     PagingDataAdapter<Pokemon, PokemonAdapter.PokemonViewHolder>(differCallback) {

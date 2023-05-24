@@ -1,6 +1,6 @@
-package com.naldana.pokemonApp.network.services
+package com.naldana.pokemonApp.data.network.services
 
-import com.naldana.pokemonApp.network.models.response.PokemonListResponse
+import com.naldana.pokemonApp.data.network.models.response.PokemonListResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 

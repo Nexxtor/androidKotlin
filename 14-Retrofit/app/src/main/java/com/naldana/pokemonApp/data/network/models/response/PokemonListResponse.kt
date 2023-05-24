@@ -1,6 +1,6 @@
-package com.naldana.pokemonApp.network.models.response
+package com.naldana.pokemonApp.data.network.models.response
 
-import com.naldana.pokemonApp.models.Pokemon
+import com.naldana.pokemonApp.data.db.models.Pokemon
 
 data class PokemonListResponse(
     val count: String,

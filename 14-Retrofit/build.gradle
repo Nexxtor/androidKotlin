@@ -1,12 +1,13 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     ext {
-        activity_version = '1.7.1'
+        activity_version = '1.7.2'
         fragment_version = '1.5.7'
         lifecycle_version = '2.6.1'
         arch_version = "2.1.0"
         nav_version = "2.5.3"
         paging_version = "3.1.1"
+        room_version = '2.5.1'
 
     }
 }

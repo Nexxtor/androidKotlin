@@ -1,4 +1,4 @@
-package com.naldana.pokemonApp.network.services
+package com.naldana.pokemonApp.data.network.services
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
