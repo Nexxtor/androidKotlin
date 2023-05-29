@@ -10,7 +10,7 @@ import com.naldana.pokemonApp.data.db.models.Pokemon
 @Dao
 interface PokemonDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAll(users: List<Pokemon>)
+    suspend fun insertAll(pokemons: List<Pokemon>)
 
     @Query("SELECT * FROM pokemons")
     fun pagingSource(): PagingSource<Int, Pokemon>
